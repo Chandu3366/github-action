@@ -41,6 +41,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-
+        docker builder prune -a
+        sudo systemctl restart docker
         docker build -t registry-url.io/chandu8121/new .
         docker push  docker build -t registry-url.io/chandu8121/new
