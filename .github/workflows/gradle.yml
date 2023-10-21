@@ -30,9 +30,8 @@ jobs:
         arguments: build
 
     - name: Build
-
-        run: |
-          mvn clean install
+      run: |
+        mvn clean install
           
     - name: Login to DockerHub
 
@@ -47,7 +46,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build the Docker image
-
       run: |
 
         docker build -t registry-url.io/chandu8121/new .
